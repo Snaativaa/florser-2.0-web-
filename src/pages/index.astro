@@ -1,0 +1,193 @@
+---
+import Carrusel from "../components/carrusel.astro";
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro"; 
+import Menu from "../components/menu.astro";
+---
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florser | Inicio</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="/styles/gallery.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head> 
+
+<body>
+  <!-- Usamos el componente Header -->  
+  <Header />
+
+  <!-- Carrusel o cualquier otro contenido principal -->  
+  <Carrusel />
+
+  <!-- Componente Menu --> 
+  <Menu />
+
+  <style>
+    /* Estilos adicionales eliminados si ya no son necesarios */  
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>   
+</body>
+
+<!-- Galería de fotos collage -->
+<section class="photos">
+  <article class="gallery">
+    <div class="img img--a">
+      <img src="/public/imagen1.png" alt="Imagen 1">
+    </div>
+    <div class="img img--b">
+      <img src="/public/imagen2.png" alt="Imagen 2">
+    </div>
+    <div class="img img--c">
+      <img src="/public/imagen3.png" alt="Imagen 3">
+    </div>
+    <div class="img img--d">
+      <img src="/public/imagen 4.png" alt="Imagen 4">
+    </div>
+    <div class="img img--e">
+      <img src="/public/imagen5.png" alt="Imagen 5">
+    </div>
+    <div class="img img--f">
+      <img src="/public/imagen6.png" alt="Imagen 6">
+    </div>
+  </article>
+</section>
+</html>
+
+<!-- Mapa de Google -->
+<div class="google-maps">
+  <iframe id="google-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6708.14612995968!2d-71.2129350399968!3d-32.79032188839992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689cb5bec5a147b%3A0x4d01f0d5ebc1cc4d!2sMichimalongo%20526%2C%202290208%20La%20Calera%2C%20Calera%2C%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1705626457010!5m2!1ses-419!2scl"
+    width="100%" height="100%" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- Estilos personalizados para el mapa -->
+<style>
+  /* Estilo para el contenedor del mapa */
+  .google-maps {
+    display: flex;
+    justify-content: center;  /* Centra el mapa horizontalmente */  
+    align-items: center;      /* Centra el mapa verticalmente */  
+    width: 100%;              /* Asegura que ocupe el 100% del ancho */
+    height: auto;             /* Permite que la altura se ajuste automáticamente */
+    background-color: #ffffff; /* Color de fondo para mejor visibilidad */
+    padding: 10px;            /* Añadimos un poco de padding para separación */
+  }
+
+  /* Ajustes para el iframe del mapa */
+  #google-maps {
+    width: 60%; /* Establece el ancho al 60% de la página */
+    aspect-ratio: 18 / 9;  /* Mantiene el aspecto rectangular */
+    height: auto;     /* Ajusta la altura automáticamente */
+    border: 1px solid #ddd; /* Borde alrededor del mapa (opcional) */
+    margin-left: auto;  /* Centra el mapa horizontalmente */
+    margin-right: auto; /* Centra el mapa horizontalmente */
+    display: block;     /* Asegura que el iframe se comporte como un bloque */
+    border-radius: 15px; /* Bordes redondeados */
+}
+
+
+  /* Título del mapa */
+  .map-title {
+    position: absolute;   
+    top: 20px;
+    font-size: 24px;
+    color: black;    
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente para el título */
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold; 
+  }
+
+  /* Ajustes responsivos para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .google-maps {
+      padding: 10px;  /* Menos padding en pantallas pequeñas */
+    }
+
+    #google-maps {
+      max-width: 100%; /* El mapa ocupa todo el ancho en pantallas más pequeñas */
+      height: 250px;  /* Define una altura fija para pantallas más pequeñas */
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Ajuste adicional para pantallas más pequeñas */
+    #google-maps {
+      height: 200px;  /* Reduce la altura en pantallas muy pequeñas */
+    }
+  }
+</style>
+
+<!-- Estilos para la galería -->
+<style>
+  .photos {
+    margin-top: 50px;
+    padding: 0 20px;  /* Añadimos un poco de padding para centrado */
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    grid-gap: 10px;  /* Reducir el espacio entre imágenes */
+    grid-template-areas:
+      "a b c"
+      "d e f"; /* Definir áreas de las imágenes para mejor control */
+    max-width: 60%; /* Asegura que la galería no se sobrepase */
+    margin-left: auto;  /* Centra la galería a la izquierda */
+    margin-right: auto; /* Centra la galería a la derecha */
+  }
+
+
+  .img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 9px; /* Bordes redondeados para el collage */
+    background-color: #f0f0f0; /* Agregar fondo para mejor visualización */
+    height: 200px; /* Reducir la altura de las imágenes */
+    border: 5px solid #ddd;
+  }
+
+  .img img {
+    width: 100%;  /* Hacer que la imagen ocupe todo el espacio disponible */
+    height: 100%;  /* Mantener la altura completa del contenedor */
+    object-fit: cover;  /* Ajustar la imagen sin distorsionarla */
+    transition: transform 0.3s ease; 
+  }
+
+  .img:hover img {
+    transform: scale(1.05); /* Zoom al pasar el ratón sobre la imagen */
+  }
+
+  /* Hacer el diseño responsivo */
+  @media (max-width: 768%) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "a b"
+        "c d"
+        "e f"; /* Ajustar el diseño a 2 columnas */
+    }
+  }
+
+  @media (max-width: 580%) {
+    .gallery {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f"; /* Ajustar a una sola columna para pantallas pequeñas */
+    }
+  }
+
+  /* Borde entre imágenes */
+</style>
+
+<!-- Componente Footer --> 
+<Footer />  

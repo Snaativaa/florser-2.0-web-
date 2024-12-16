@@ -1,0 +1,12 @@
+---
+// ServiceCard.astro
+const { title, description, price, image } = Astro.props;
+---
+<div class="card mt-5" style="width: 18rem;">
+  <img src={image} class="card-img-top" alt={title} />
+  <div class="card-body">
+    <h5 class="card-title">{title}</h5>
+    <p class="card-text">{description}</p>
+    <p class="card-text"><strong>Precio: {price}</strong></p>
+  </div>
+</div>

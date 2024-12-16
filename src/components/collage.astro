@@ -1,0 +1,91 @@
+<!-- Galería de fotos collage -->
+<section class="photos"> 
+  <article class="gallery">
+    <div class="img img--a">
+      <img src="/public/imagen1.png" alt="Imagen 1">
+    </div>
+    <div class="img img--b">
+      <img src="/public/imagen2.png" alt="Imagen 2">
+    </div>
+    <div class="img img--c">
+      <img src="/public/imagen3.png" alt="Imagen 3">
+    </div>
+    <div class="img img--d">
+      <img src="/public/imagen 4.png" alt="Imagen 4">
+    </div>
+    <div class="img img--e">
+      <img src="/public/imagen5.png" alt="Imagen 5">
+    </div>
+    <div class="img img--f">
+      <img src="/public/imagen6.png" alt="Imagen 6">
+    </div>
+  </article> 
+</section> 
+
+<!-- Estilos para la galería -->
+<style>
+  .photos {
+    margin-top: 50px;
+    padding: 0 20px;  /* Añadimos un poco de padding para centrado */
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    grid-gap: 10px;  /* Reducir el espacio entre imágenes */
+    grid-template-areas:
+      "a b c"
+      "d e f"; /* Definir áreas de las imágenes para mejor control */
+    max-width: 60%; /* Asegura que la galería no se sobrepase */
+    margin-left: auto;  /* Centra la galería a la izquierda */
+    margin-right: auto; /* Centra la galería a la derecha */
+  }
+
+
+  .img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 9px; /* Bordes redondeados para el collage */
+    background-color: #f0f0f0; /* Agregar fondo para mejor visualización */
+    height: 200px; /* Reducir la altura de las imágenes */
+    border: 5px solid #ddd;
+  }
+
+  .img img {
+    width: 100%;  /* Hacer que la imagen ocupe todo el espacio disponible */
+    height: 100%;  /* Mantener la altura completa del contenedor */
+    object-fit: cover;  /* Ajustar la imagen sin distorsionarla */
+    transition: transform 0.3s ease; 
+  }
+
+  .img:hover img {
+    transform: scale(1.05); /* Zoom al pasar el ratón sobre la imagen */
+  }
+
+  /* Hacer el diseño responsivo */
+  @media (max-width: 768%) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "a b"
+        "c d"
+        "e f"; /* Ajustar el diseño a 2 columnas */
+    }
+  }
+
+  @media (max-width: 580%) {
+    .gallery {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f"; /* Ajustar a una sola columna para pantallas pequeñas */
+    }
+  }
+
+  /* Borde entre imágenes */
+</style>
+

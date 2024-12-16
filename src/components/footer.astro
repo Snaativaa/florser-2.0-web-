@@ -1,0 +1,151 @@
+<footer>  
+  <div class="footer-content">  
+    <!-- Logo de FlorSer a la izquierda -->
+    <div class="footer-logo">
+      <img src="/public/florser.webp" alt="Logo FlorSer" class="florser-logo"> 
+    </div>
+
+    <!-- Sección de Instagram y contacto -->   
+    <div class="instagram-contact">   
+      <p class="contact-text">
+        <a href="https://www.instagram.com/Terapia_operacional_florser" target="_blank" class="instagram-logo">
+          <img src="/src/img/instagram-logo.png" alt="Logo Instagram" class="logo"/>  
+        </a>
+        Síguenos en Instagram  
+      </p>
+      <!-- Usuario de Instagram en la misma línea -->
+      <p class="instagram-username">
+        <a href="https://www.instagram.com/centroflorser/" target="_blank" class="instagram-link">Centroflorser</a>   
+      </p>
+      <p class="contact-text">   
+        <a href="https://wa.me/56987640509" target="_blank">   
+          <img src="/public/wasap.png" alt="Logo WhatsApp" class="whatsapp-logo" />    
+        </a>
+        WhatsApp:
+        <a href="https://wa.me/56987640509" target="_blank" class="whatsapp-link">+56987640509</a>
+      </p>
+    </div>
+  </div>
+  
+  <!-- Pie de página -->
+  <div class="footer-bottom">
+    <p>&copy; 2024 Terapia Ocupacional FlorSer. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<!-- Estilos personalizados para el footer -->
+<style>
+footer {
+  background-color: whitesmoke;
+  color: black;
+  padding: 30px;
+  text-align: center;  
+  width: 100%;
+  z-index: 1;
+  height: 11vw; 
+}
+
+florser-logo{
+  text-align: right;
+  justify-content: right;
+  align-items: right;
+}
+
+/* Contenedor principal del footer */
+.footer-content {
+  display: flex;
+  justify-content: center;  /* Centra los elementos horizontalmente */
+  align-items: center;  /* Alinea verticalmente los elementos */
+  gap: 20px;  /* Espacio entre los elementos */
+  max-width: 1200px;
+  margin: 0 auto;  /* Centra el contenedor dentro de su contenedor principal */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+
+/* Sección de Instagram y contacto */
+.instagram-contact {
+  display: flex;  /* Alinea los elementos de Instagram y WhatsApp horizontalmente */
+  flex-wrap: nowrap;  /* Asegura que los elementos no se envuelvan en varias líneas */
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 15px; /* Espacio entre los elementos */
+  text-align: left;
+}
+
+/* Estilo de los textos de contacto */  
+.contact-text {
+  font-size: 18px;
+  color: black;
+  display: flex;
+  align-items: right;   /* Alinea los elementos de texto e imagen verticalmente */
+  white-space: nowrap;   /* Evita que el texto se divida en múltiples líneas */
+}
+
+.instagram-logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.logo {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Enlaces de Instagram */
+.instagram-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold; 
+}
+
+.instagram-link:hover {
+  color: #ff69b4;
+}
+
+/* Estilo del logo de WhatsApp */
+.whatsapp-logo {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Enlaces de WhatsApp */
+.whatsapp-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.whatsapp-link:hover {
+  color: #25D366;
+}
+
+/* Pie de página */
+.footer-bottom {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: black;   
+}
+
+/* Estilos responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;  /* Cambia la disposición a columna en pantallas pequeñas */
+    align-items: center;  /* Centra los elementos */
+    gap: 10px;
+  }
+
+  .contact-text {
+    text-align: center;  /* Centra el texto en pantallas pequeñas */
+    justify-content: center;
+  }
+}
+</style>
+
